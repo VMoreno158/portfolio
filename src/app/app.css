@@ -1,0 +1,11 @@
+main {
+    margin-inline: auto;
+    margin-bottom: 1.25rem;
+    display: flex;
+    max-width: 48rem;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-inline: 1.25rem;
+    margin-top: 4rem;
+}
+    
