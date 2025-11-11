@@ -1,0 +1,76 @@
+<section id="technologies">
+    <header>
+        <h2>Tecnologías</h2>
+    </header>
+    <footer>
+        <article>
+            <header>
+                <h3>FRONTEND</h3>
+            </header>
+            <footer>
+                <div class="logos-container">
+                    @for(tech of frontTech; track tech.name){
+                    <div class="logo">
+                        <img [src]="tech.svg" [alt]="tech.name">
+                        <span>{{tech.name}}</span>
+                    </div>
+                    }
+                </div>
+                <div class="logos-container" aria-hidden>
+                    @for(tech of frontTech; track tech.name){
+                    <div class="logo">
+                        <img [src]="tech.svg" [alt]="tech.name">
+                        <span>{{tech.name}}</span>
+                    </div>
+                    }
+                </div>
+            </footer>
+        </article>
+        <article>
+            <header>
+                <h3>BACKEND</h3>
+            </header>
+            <footer>
+                <div class="logos-container">
+                    @for(tech of backTech; track tech.name){
+                    <div class="logo">
+                        <img [src]="tech.svg" [alt]="tech.name">
+                        <span>{{tech.name}}</span>
+                    </div>
+                    }
+                </div>
+                <div class="logos-container" aria-hidden>
+                    @for(tech of backTech; track tech.name){
+                    <div class="logo">
+                        <img [src]="tech.svg" [alt]="tech.name">
+                        <span>{{tech.name}}</span>
+                    </div>
+                    }
+                </div>
+            </footer>
+        </article>
+        <article>
+            <header>
+                <h3>HERRAMIENTAS</h3>
+            </header>
+            <footer>
+                <div class="logos-container">
+                    @for(tech of toolsTech; track tech.name){
+                    <div class="logo">
+                        <img [src]="tech.svg" [alt]="tech.name">
+                        <span>{{tech.name}}</span>
+                    </div>
+                    }
+                </div>
+                <div class="logos-container" aria-hidden>
+                    @for(tech of toolsTech; track tech.name){
+                    <div class="logo">
+                        <img [src]="tech.svg" [alt]="tech.name">
+                        <span>{{tech.name}}</span>
+                    </div>
+                    }
+                </div>
+            </footer>
+        </article>
+    </footer>
+</section>

@@ -1,0 +1,93 @@
+.timeline {
+  position: relative;
+  border-left: 2px solid #0096ff33;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  list-style: none;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.8rem;
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: -0.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #0096ff33;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: #66ccff;
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-text {
+  font-size: 1rem;
+  color: #D1D5DB;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #064e3b;
+  color: #7dd3a6;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.timeline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  color: #111827;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.timeline-btn:hover {
+  background-color: #f3f4f6;
+  color: #1d4ed8;
+  border-color: #c7d2fe;
+}
+
+.timeline-btn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}

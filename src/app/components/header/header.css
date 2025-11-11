@@ -1,15 +1,126 @@
-header {
+nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #14141e99;
+  backdrop-filter: blur(10px);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  border: 1px solid #0096ff33;
+}
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-links,
+.nav-icons {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-
-  min-height: 4rem;
-  background-color: aliceblue;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.8rem;
 }
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 3px currentColor;
+}
+
+span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links li a {
+    padding: 0.5rem 0.5rem;
+    border-radius: 999px;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+  }
+  span {
+    display: none;
+  }
+
+  .nav-icons {
+    display: none;
+  }
+}
+
+.nav-icons li {
+  margin: 0 0.3rem;
+}
+
+.nav-icons a,
+.nav-icons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-icons a:hover svg,
+.nav-icons button:hover svg {
+  stroke: #66ccff;
+}
+
+#theme-btn {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+#theme-btn svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+#theme-btn .moon {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6) rotate(-90deg);
+}
+
+html.dark #theme-btn .sun {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6) rotate(90deg);
+}
+
+html.dark #theme-btn .moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
