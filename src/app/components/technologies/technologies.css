@@ -4,10 +4,9 @@ section > footer {
   gap: 2rem;
 
   article {
-    background: #1e2734;
+    background: var(--section-background-color);
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1.5px solid #1e2734;
+    box-shadow: 0 4px 12px var(--section-shadow-color);
     padding: 1.6rem;
 
     & > header {
@@ -46,7 +45,6 @@ section > footer {
         &:hover {
           scale: 1.4;
           font-weight: bolder;
-          
         }
 
         img {
@@ -54,7 +52,7 @@ section > footer {
         }
 
         span {
-          color: #d1d5db;
+          color: var(--primary-text-color);
         }
       }
 
@@ -75,12 +73,12 @@ section > footer {
 
       &::before {
         left: 0;
-        background-image: linear-gradient(to right, #1e2734, transparent);
+        background-image: linear-gradient(to right, var(--section-background-color), transparent);
       }
 
       &::after {
         right: 0;
-        background-image: linear-gradient(to left, #1e2734, transparent);
+        background-image: linear-gradient(to left, var(--section-background-color), transparent);
       }
     }
   }

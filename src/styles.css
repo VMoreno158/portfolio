@@ -1,53 +1,106 @@
 :root {
-  color-scheme: light dark;
-  --carousel-speed: 15s;
-  --carousel-gap: 2rem;
-  --carousel-padding: 2rem;
-  --icon-size: 4rem;
-  --gradient-height: 20%;
+  --backgorund-color: #f5f5f7;
+  --section-background-color: #ffffff;
+  --section-shadow-color: rgba(0, 0, 0, 0.06);
+  --section-hover-shadow-color: rgba(0, 0, 0, 0.12);
 
-  @media (max-width: 768px) {
-    --icon-size: 3rem;
-    --carousel-gap: 1rem;
-    --carousel-padding: 1rem;
-  }
+  --primary-title-color: #111827;
+
+  --primary-text-color: #374151;
+  --secundary-text-color: #6b7280;
+
+  --header-background-color: #ffffffcc;
+  --header-border-color: #0077ff33;
+  --nav-links-hover-background-color: #0000000d;
+  --nav-links-shadow-color: rgba(0, 0, 0, 0.15);
+
+  --tag-background-color: #0096ff22;
+  --tag-text-color: #005f99;
+
+  --emphasis-tag-backgrond-color: #aef5d0;
+  --emphasis-tag-text-color: #065f46;
+
+  --social-anchor-border-color: #003f5c22;
+
+  --download-btn-background-color: #387fdb;
+  --download-btn-shadow-color: rgba(0, 102, 255, 0.35);
+
+  --theme-btn-svg-stroke-color: #d3a61f;
+  --theme-btn-svg-shadow-color: #ffff00;
+
+  --theme-btn-hover-svg-stroke-color: #6b7280;
+  --theme-btn-hover-svg-shadow-color: none;
+}
+
+.dark-mode {
+  color-scheme: light dark;
+
+  --backgorund-color: #121b28;
+  --section-background-color: #1e2734;
+  --section-shadow-color: rgba(0, 0, 0, 0.08);
+  --section-hover-shadow-color: rgba(255, 255, 255, 0.12);
+
+  --primary-title-color: #fff;
+
+  --primary-text-color: #d1d5db;
+  --secundary-text-color: #6b7280;
+
+  --header-background-color: #14141e99;
+  --header-border-color: #0096ff33;
+  --nav-links-hover-background-color: #ffffff1a;
+  --nav-links-shadow-color: rgba(0, 0, 0, 0.3);
+
+  --tag-background-color: #0096ff33;
+  --tag-text-color: #66ccff;
+
+  --emphasis-tag-backgrond-color: #064e3b;
+  --emphasis-tag-text-color: #7dd3a6;
+
+  --social-anchor-border-color: #c2d7df33;
+
+  --download-btn-background-color: #066fd1;
+  --download-btn-shadow-color: #00d4ff73;
+
+  --theme-btn-svg-stroke-color: #fff;
+  --theme-btn-svg-shadow-color: none;
+
+  --theme-btn-hover-svg-stroke-color: #ffff00;
+  --theme-btn-hover-svg-shadow-color: #ffff00;
 }
 
 html {
-  background-color: #14141e;
-  background-color: #121b28;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0),
+  background-color: var(--backgorund-color);
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E.dot { fill: rgba(255,255,255,0.05); }%3C/style%3E%3C/defs%3E%3Cg class='dot'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3Ccircle cx='50' cy='50' r='1'/%3E%3Ccircle cx='70' cy='70' r='1'/%3E%3Ccircle cx='90' cy='90' r='1'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Ccircle cx='90' cy='50' r='1'/%3E%3Ccircle cx='50' cy='90' r='1'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-position: center;
   background-repeat: repeat;
   background-size: 5%;
-}
 
-body {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    Noto Color Emoji;
-  margin: 0;
-  padding-top: 4rem;
-}
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+      Segoe UI Symbol, Noto Color Emoji;
+    margin: 0;
+    padding-top: 4rem;
 
-section {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    scroll-margin-top: 7.5rem;
+    section {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      scroll-margin-top: 7.5rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
   }
-
-h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
-
-p {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }

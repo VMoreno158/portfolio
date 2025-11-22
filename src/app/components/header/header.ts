@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +7,15 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './header.css',
 })
 export class Header {
+  @ViewChild('themeBtn') btn!: ElementRef<HTMLButtonElement>
+
+  ngAfterViewInit(): void {
+    console.log(this.btn)
+  }
+
+  changeTheme() {
+    if (this.btn) {
+      document.documentElement.classList.toggle("dark-mode")
+    }
+  }
 }

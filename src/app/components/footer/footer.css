@@ -1,4 +1,10 @@
 footer { 
     height: 10rem;
-    
+    margin-top: 5rem;
+
+    hr {
+        border: none;
+        border-top: var(--section-background-color) solid 1.5px;
+        width: 80%;
+    }
 }
