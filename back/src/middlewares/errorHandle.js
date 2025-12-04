@@ -1,4 +1,4 @@
-export const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
     console.error(err)
 
     if (err.name === 'CastError') return res.status(404).json(
@@ -16,7 +16,9 @@ export const errorHandler = (err, req, res, next) => {
     return res.status(500).json(
         { 
             error: 'Internal server error',
-            code: 'INTERNAL_SERVER_ERROR'
+            code: 'MONGO_INTERNAL_SERVER_ERROR'
         }
     )
 }
+
+export default errorHandler

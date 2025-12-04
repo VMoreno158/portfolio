@@ -1,11 +1,10 @@
-import Proyect from '../models/proyectModel.js'
-import { notFoundHandle } from '../utils/notFoundHandle.js'
-import { validationHandle } from '../utils/validationHandle.js' 
-import { RESOURCE } from '../constants/resources.js'
+import { getProyectsService, getProyectByIdService, addProyectService, updateProyectByIdService, deleteProyectByIdService } from '../services/proyectService.js'
+import { notFoundHandle, fieldRequiredHandle } from '../utils/handles.js'
+import { RESOURCE } from '../config/constants.js'
 
 export const getProyects = async (req, res, next) => {
     try {
-        const proyects = await Proyect.find()
+        const proyects = await getProyectsService()
         return res.json(proyects)
 
     } catch (err) {
@@ -15,8 +14,7 @@ export const getProyects = async (req, res, next) => {
 
 export const getProyectById = async (req, res, next) => {
     try {
-        const id = req.params.id
-        const proyect = await Proyect.findById(id)
+        const proyect = await getProyectByIdService(req.params.id)
 
         if (!proyect) return notFoundHandle(res, RESOURCE.PROYECT)
 
@@ -30,15 +28,16 @@ export const getProyectById = async (req, res, next) => {
 export const addProyect = async (req, res, next) => {
     try {
         const { name, description, technologies, link, repository } = req.body
-
-        if (!name) return validationHandle(res, 'Name')
-        if (!description) return validationHandle(res, 'Description')
-        if (!repository) return validationHandle(res, 'Repository')
-
-        const newProyect = new Proyect({ name, description, technologies, link, repository })
-
-        const savedProyect = await newProyect.save()
         
+        const missingFields = []
+
+        if (!name) missingFields.push('Name')
+        if (!description) missingFields.push('Description')
+        if (!repository) missingFields.push('Repository')
+
+        if (missingFields.length > 0) fieldRequiredHandle(res, missingFields)
+
+        const savedProyect = await addProyectService({ name, description, technologies, link, repository })
         return res.status(201).json(savedProyect)
 
     } catch (err) {
@@ -48,8 +47,7 @@ export const addProyect = async (req, res, next) => {
 
 export const updateProyectById = async (req, res, next) => {
     try {
-        const id = req.params.id
-        const updatedProyect = await Proyect.findByIdAndUpdate(id, req.params.body, { new: true })
+        const updatedProyect = await updateProyectService(req.params.id, req.params.body)
 
         if (!updatedProyect) return notFoundHandle(res, RESOURCE.PROYECT)
 
@@ -62,8 +60,7 @@ export const updateProyectById = async (req, res, next) => {
 
 export const deleteProyectById = async (req, res, next) => {
     try {
-        const id = req.params.id
-        const deletedProyect = await Proyect.findByIdAndDelete(id)
+        const deletedProyect = await deleteProyectById(req.params.id)
 
         if (!deletedProyect) return notFoundHandle(res, RESOURCE.PROYECT)
 
