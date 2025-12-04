@@ -32,7 +32,7 @@ export const addExperience = async (req, res, next) => {
     if (!title) missingFields.push('Title')
     if (!startDate) missingFields.push('StartDate')
 
-    if (missingFields.length > 0) fieldRequiredHandle(res, missingFields)
+    if (missingFields.length > 0) return fieldRequiredHandle(res, missingFields)
 
     const savedExperience = await addExperienceService({ title, description, startDate, finishDate, type, active })
     return res.status(201).json(savedExperience)
@@ -42,11 +42,11 @@ export const addExperience = async (req, res, next) => {
   }
 }
 
-export const updateExperience = async (req, res, next) => {
+export const updateExperienceById = async (req, res, next) => {
   try {
     const updatedExperience = await updateExperienceService(req.params.id, req.params.body)
 
-    if (!updatedExperience) notFoundHandle(res, RESOURCE.EXP)
+    if (!updatedExperience) return notFoundHandle(res, RESOURCE.EXP)
 
     return res.status(200).json(updatedExperience)
 
@@ -59,7 +59,7 @@ export const deleteExperienceById = async (req, res, next) => {
   try {
     const deletedProyect = await deleteExperienceByIdService(id)
 
-    if (!deletedProyect) notFoundHandle(res, RESOURCE.EXP)
+    if (!deletedProyect) return notFoundHandle(res, RESOURCE.EXP)
 
     return res.status(204).end()
 

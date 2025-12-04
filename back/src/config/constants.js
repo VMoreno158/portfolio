@@ -1,4 +1,5 @@
 export const RESOURCE = {
     PROYECT: 'Proyect',
-    EXP: 'Experience'
+    EXP: 'Experience',
+    TECH: 'Technology'
 }

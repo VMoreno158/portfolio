@@ -4,13 +4,9 @@ import { getProyects, getProyectById, addProyect, updateProyectById, deleteProye
 const router = express.Router()
 
 router.get('/', getProyects)
-
 router.get('/:id', getProyectById)  
-
 router.post('/', addProyect)
-
 router.put('/:id', updateProyectById)
-
 router.delete('/:id', deleteProyectById)
 
 export default router

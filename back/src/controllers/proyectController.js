@@ -35,7 +35,7 @@ export const addProyect = async (req, res, next) => {
         if (!description) missingFields.push('Description')
         if (!repository) missingFields.push('Repository')
 
-        if (missingFields.length > 0) fieldRequiredHandle(res, missingFields)
+        if (missingFields.length > 0) return fieldRequiredHandle(res, missingFields)
 
         const savedProyect = await addProyectService({ name, description, technologies, link, repository })
         return res.status(201).json(savedProyect)
