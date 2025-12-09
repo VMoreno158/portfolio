@@ -11,6 +11,7 @@ const proyectSchema = new mongoose.Schema(
             type: String, 
             required: [true, 'Description field is required'] 
         },
+        immage: String,
         technologies: {
             type: [String],
             validate: {

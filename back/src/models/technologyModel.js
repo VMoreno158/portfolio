@@ -6,7 +6,7 @@ const technologySchema = new mongoose.Schema({
             type: String,
             required: [true, 'Name field is required']
         },
-        imgRoute: {
+        image: {
             type: String,
             required: [true, 'ImgRoute field is required']
         }
