@@ -1,5 +1,5 @@
 import { getExperienceListService, getExperienceByIdService, addExperienceService, updateExperienceByIdService, deleteExperienceByIdService } from '../services/experienceService.js'
-import { notFoundHandle, fieldRequiredHandle } from '../utils/handles.js'
+import { resourceNotFoundError } from '../utils/handleErrors.js'
 import { RESOURCE } from '../config/constants.js'
 
 export const getExperienceList = async (req, res, next) => {
@@ -15,7 +15,7 @@ export const getExperienceList = async (req, res, next) => {
 export const getExperienceById = async (req, res, next) => {
   try {
     const experience = await getExperienceByIdService(req.params.id)
-    if (!experience) return notFoundHandle(res, RESOURCE.EXP)
+    if (!experience) return resourceNotFoundError(res, RESOURCE.EXP)
     return res.status(200).json(experience)
 
   } catch (err) {
@@ -25,16 +25,8 @@ export const getExperienceById = async (req, res, next) => {
 
 export const addExperience = async (req, res, next) => {
   try {
-    const { title, description, startDate, finishDate, type, active } = req.params.body
 
-    const missingFields = []
-
-    if (!title) missingFields.push('Title')
-    if (!startDate) missingFields.push('StartDate')
-
-    if (missingFields.length > 0) return fieldRequiredHandle(res, missingFields)
-
-    const savedExperience = await addExperienceService({ title, description, startDate, finishDate, type, active })
+    const savedExperience = await addExperienceService(req.body)
     return res.status(201).json(savedExperience)
 
   } catch (err) {
@@ -44,10 +36,8 @@ export const addExperience = async (req, res, next) => {
 
 export const updateExperienceById = async (req, res, next) => {
   try {
-    const updatedExperience = await updateExperienceService(req.params.id, req.params.body)
-
-    if (!updatedExperience) return notFoundHandle(res, RESOURCE.EXP)
-
+    const updatedExperience = await updateExperienceByIdService(req.params.id, req.body)
+    if (!updatedExperience) return resourceNotFoundError(res, RESOURCE.EXP)
     return res.status(200).json(updatedExperience)
 
   } catch (err) {
@@ -57,10 +47,8 @@ export const updateExperienceById = async (req, res, next) => {
 
 export const deleteExperienceById = async (req, res, next) => {
   try {
-    const deletedProyect = await deleteExperienceByIdService(id)
-
-    if (!deletedProyect) return notFoundHandle(res, RESOURCE.EXP)
-
+    const deletedExperience = await deleteExperienceByIdService(req.params.id)
+    if (!deletedExperience) return resourceNotFoundError(res, RESOURCE.EXP)
     return res.status(204).end()
 
   } catch (err) {

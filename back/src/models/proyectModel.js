@@ -11,7 +11,6 @@ const proyectSchema = new mongoose.Schema(
             type: String, 
             required: [true, 'Description field is required'] 
         },
-        immage: String,
         technologies: {
             type: [String],
             validate: {
@@ -21,10 +20,12 @@ const proyectSchema = new mongoose.Schema(
                 message: 'At least one technology is required'
             }
         },
-        link: String,
-        repository: { 
+        webUrl: String,
+        videoUrl: String,
+        repoUrl: { 
             type: String, 
-            required: [true, 'Repository field is required'] }
+            required: [true, 'Repository field is required'] 
+        }
     }
 )
 

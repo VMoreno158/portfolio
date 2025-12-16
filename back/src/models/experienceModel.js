@@ -23,10 +23,9 @@ const experienceSchema = new mongoose.Schema(
         },
         active: { 
             type: Boolean, 
-            default: true
+            default: false
         }
     }
 )
-
 const Experience = new mongoose.model(RESOURCE.EXP, experienceSchema)
 export default Experience

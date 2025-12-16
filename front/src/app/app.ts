@@ -14,5 +14,10 @@ import { Technologies } from "./components/technologies/technologies";
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  protected readonly title = signal('Víctor Moreno - Portfolio');
+  isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+  ngOnInit(): void {
+    if(this.isDark) document.documentElement.classList.toggle("dark-mode")
+  }
 }

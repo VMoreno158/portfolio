@@ -33,6 +33,5 @@ export class Technologies {
     { name: 'Figma', svg: 'https://cdn.simpleicons.org/figma/F24E1E' },
     { name: 'Postman', svg: 'https://cdn.simpleicons.org/postman/FF6C37' },
   ]
-
 }
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProyectService } from '../../services/proyect-service';
 
 @Component({
   selector: 'app-proyects',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './proyects.css',
 })
 export class Proyects {
+  proyectService = inject(ProyectService)
+  proyectList:any
 
+  ngOnInit(): void {
+    this.proyectService.getAll().subscribe((res:any) => {
+      console.log(res)
+      this.proyectList = res
+    })
+  }
 }

@@ -5,47 +5,26 @@
   </header>
 
   <footer>
+    @for (proyect of proyectList; track proyect._id) {
     <article>
 
       <header>
-        <img
-          src="https://cdn.shopify.com/s/files/1/0229/0839/files/PLATAFORMA-DE-ECOMMERCE-POPULAR-ESPANA.jpg?v=1659627623"
-          alt="Gestor de Tareas">
+        <h3>{{proyect.name}}</h3>
       </header>
 
       <footer>
-        <h3>Gestor de Tareas</h3>
-        <p>Aplicación web para crear, organizar y completar tareas con autenticación de usuarios.</p>
-        
+        <p>{{proyect.description}}</p>
+
         <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
+          @for (technology of proyect.technologies; track technology) {
+          <span>{{technology}}</span>
+          }
         </div>
       </footer>
 
     </article>
+    }
 
-    <article>
-
-      <header>
-        <img
-          src="https://cdn.shopify.com/s/files/1/0229/0839/files/PLATAFORMA-DE-ECOMMERCE-POPULAR-ESPANA.jpg?v=1659627623"
-          alt="Gestor de Tareas">
-      </header>
-
-      <footer>
-        <h3>Gestor de Tareas</h3>
-        <p>Aplicación web para crear, organizar y completar tareas con autenticación de usuarios.</p>
-        
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-        </div>
-      </footer>
-
-    </article>
   </footer>
 
 </section>
