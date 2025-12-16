@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-hero',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './hero.css',
 })
 export class Hero {
-  openToWork:boolean = true
+  openToWork: boolean = environment.openToWork
 }

@@ -19,9 +19,6 @@ section > footer {
       box-shadow: 0 8px 18px var(--section-hover-shadow-color);
     }
 
-    & > header {
-    }
-
     & > footer {
 
       h3 {

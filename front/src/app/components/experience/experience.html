@@ -36,7 +36,7 @@
                     }
                 </h3>
                 <time class="timeline-date">{{ exp.startDate | date:'MMMM yyyy':'':'es-ES' | titlecase }} {{
-                    exp.finishDate ? '-' + (exp.finishDate | date: 'MMMM yyyy':'':'es-ES' | titlecase) : (exp.active ? '- act.' : '') }}</time>
+                    exp.finishDate ? '- ' + (exp.finishDate | date: 'MMMM yyyy':'':'es-ES' | titlecase) : (exp.active ? '- act.' : '') }}</time>
                 <p class="timeline-text">
                     {{ exp.description }}.
                 </p>

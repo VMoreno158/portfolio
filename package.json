@@ -1,5 +1,5 @@
 {
-    "name": "Víctor Moreno - portfolio",
+    "name": "portfolio",
     "version": "1.0.0",
     "scripts": {
         "install:all": "cd back && npm install && cd ../front && npm install",
