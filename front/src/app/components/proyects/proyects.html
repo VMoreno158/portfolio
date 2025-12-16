@@ -13,7 +13,7 @@
       </header>
 
       <footer>
-        <p>{{proyect.description}}</p>
+        <img src="{{ proyect.image ? proyect.image : 'https://i0.wp.com/www.bishoprook.com/wp-content/uploads/2021/05/placeholder-image-gray-16x9-1.png?ssl=1' }}" alt="Imagen del {{proyect.name}}">
 
         <div class="tags">
           @for (technology of proyect.technologies; track technology) {

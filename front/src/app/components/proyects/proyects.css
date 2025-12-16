@@ -29,10 +29,9 @@ section > footer {
         margin-bottom: 10px;
       }
 
-      p {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
-        color: var(--primary-text-color);
+      & > img {
+        max-width: 100%;
+        margin-bottom: 1rem;
       }
 
       .tags {

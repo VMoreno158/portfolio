@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProyectService {
   http = inject(HttpClient)
-  url = 'http://localhost:80'
+  apiUrl = environment.apiUrl
 
   getAll() {
-    return this.http.get(`${this.url}/proyects`)
+    return this.http.get(`${this.apiUrl}/proyects`)
   }
 }
