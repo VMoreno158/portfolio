@@ -1,5 +1,5 @@
 section {
-  margin-top: 5rem;
+  margin-top: 4rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -34,23 +34,70 @@ section {
     .title-container {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.2rem;
 
-      span {
+      span.open-to-work {
         display: inline-block;
         background-color: var(--emphasis-tag-backgrond-color);
         color: var(--emphasis-tag-text-color);
         font-weight: 600;
         font-size: 0.9rem;
+        margin-top: 0.4rem;
         padding: 0.3rem 0.8rem;
         border-radius: 999px;
         font-family: system-ui, sans-serif;
         text-align: center;
         white-space: nowrap;
+
+        .icon {
+          display: none;
+          width: 22px;
+          height: 22px;
+        }
+
+        @media (max-width: 419px) {
+          padding: 0.4rem;
+          position: relative;
+          cursor: help;
+
+          .text {
+            display: none;
+          }
+
+          .icon {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          &::after {
+            content: 'Open to work';
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background-color: var(--emphasis-tag-backgrond-color);
+            color: var(--emphasis-tag-text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+          }
+
+          &:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+          }
+        }
       }
     }
 
     .actions-container {
+      margin-top: 0.6rem;
       display: flex;
       gap: 0.5rem;
       align-items: center;
@@ -60,6 +107,7 @@ section {
         padding: 0.8rem 1.6rem;
         margin-right: 1rem;
         text-decoration: none;
+        text-align: center;
         border: none;
         border-radius: 10px;
         background: var(--download-btn-background-color);

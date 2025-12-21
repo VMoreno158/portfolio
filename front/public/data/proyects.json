@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Proyecto 1",
+        "image": "/images/proyecto1.png",
+        "description": "Primer proyecto de ejemplo con varias tecnologías.",
+        "technologies": ["Node.js", "Express", "MongoDB"],
+        "links": {
+            "repository": "https://proyecto-uno.ejemplo.com",
+            "web": "https://github.com/usuario/proyecto-uno",
+            "video": "https://youtube.com/ejemplo-proyecto-uno"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Proyecto 2",
+        "image": "/images/proyecto2.png",
+        "description": "Segundo proyecto de ejemplo con diferentes tecnologías.",
+        "technologies": ["Angular", "TypeScript", "Firebase"],
+        "links": {
+            "repository": "https://proyecto-dos.ejemplo.com",
+            "web": "https://github.com/usuario/proyecto-dos",
+            "video": "https://youtube.com/ejemplo-proyecto-dos"
+        }
+    }
+]

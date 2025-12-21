@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "title": "Bachillerato tecnológico",
+        "description": "Cursado en el IES Federico García Bernalt, en la rama tecnológica",
+        "startDate": "2019-09-01T00:00:00.000Z",
+        "finishDate": "2020-06-01T00:00:00.000Z",
+        "type": "education",
+        "active": false
+    },
+    {
+        "id": 2,
+        "title": "Ingeniería informática",
+        "description": "Cursado en la Universidad Pontificia de Salamanca, con la mención de Desarrollo de Software Web",
+        "startDate": "2020-09-01T00:00:00.000Z",
+        "type": "education",
+        "active": false
+    }
+]

@@ -1,10 +1,16 @@
 main {
   margin-inline: auto;
-  margin-bottom: 1.25rem;
+  margin-bottom: 3rem;
   display: flex;
   max-width: 48rem;
   flex-direction: column;
   gap: 2.5rem;
   padding-inline: 1.25rem;
   min-height: 100vh;
+}
+
+hr {
+  border: none;
+  border-top: var(--section-background-color) solid 1.5px;
+  width: 80%;
 }

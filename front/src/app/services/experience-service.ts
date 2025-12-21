@@ -7,10 +7,10 @@ import { environment } from '../../environments/environment';
 })
 export class ExperienceService {
   http = inject(HttpClient)
-  apiUrl = environment.apiUrl
+  url = environment.dataUrl
 
   getAll() {
-    return this.http.get(`${this.apiUrl}/experience`)
+    return this.http.get(`${this.url}/experience.json`)
   }
   
 }
