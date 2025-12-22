@@ -4,10 +4,12 @@
   --section-shadow-color: rgba(0, 0, 0, 0.06);
   --section-hover-shadow-color: rgba(0, 0, 0, 0.12);
 
+  --decoration-line-color: #dbdbdb62;
+
   --primary-title-color: #111827;
 
   --primary-text-color: #374151;
-  --secundary-text-color: #6b7280;
+  --secundary-text-color: #6b72808e;
 
   --header-background-color: #ffffffcc;
   --header-border-color: #0077ff33;
@@ -40,10 +42,12 @@
   --section-shadow-color: rgba(0, 0, 0, 0.08);
   --section-hover-shadow-color: rgba(255, 255, 255, 0.12);
 
+  --decoration-line-color: #1e2734;
+
   --primary-title-color: #fff;
 
   --primary-text-color: #d1d5db;
-  --secundary-text-color: #6b7280;
+  --secundary-text-color: #6b7280b5;;
 
   --header-background-color: #14141e99;
   --header-border-color: #0096ff33;
@@ -85,7 +89,7 @@ html {
     padding-top: 4rem;
 
     section {
-      margin-top: 3rem;
+      margin-top: 2rem;
       margin-bottom: 1rem;
       scroll-margin-top: 7.5rem;
     }

@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 })
 export class ProyectService {
   http = inject(HttpClient)
-  url = environment.dataUrl
+  url = environment.jsonDataUrl
 
   getAll() {
     return this.http.get(`${this.url}/proyects.json`)

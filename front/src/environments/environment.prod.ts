@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    dataUrl: 'data',
+    jsonDataUrl: 'data/jsons',
     openToWork: true
 }

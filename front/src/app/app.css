@@ -4,13 +4,13 @@ main {
   display: flex;
   max-width: 48rem;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1rem;
   padding-inline: 1.25rem;
   min-height: 100vh;
 }
 
 hr {
   border: none;
-  border-top: var(--section-background-color) solid 1.5px;
+  border-top: var(--decoration-line-color) solid 1.5px;
   width: 80%;
 }

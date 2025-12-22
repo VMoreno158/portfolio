@@ -17,8 +17,8 @@ section {
     width: 11rem;
     height: 11rem;
     border-radius: 9999px;
-    border: 8px solid var(--section-background-color);
-    background-color: var(--section-background-color);
+    border: 8px solid var(--decoration-line-color);
+    background-color: var(--decoration-line-color);
   }
 
   .info-container {
